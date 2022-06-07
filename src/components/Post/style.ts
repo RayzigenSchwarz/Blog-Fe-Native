@@ -55,6 +55,7 @@ export const style = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    marginTop: 18,
   },
   like: {},
   likeCount: {
@@ -70,7 +71,6 @@ export const style = StyleSheet.create({
   postHideShowDescription: {
     width: '100%',
     fontSize: 18,
-    marginBottom: 18,
     fontWeight: '300',
     color: COLORS.BLUE,
   },
