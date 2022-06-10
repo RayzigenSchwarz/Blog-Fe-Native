@@ -11,23 +11,23 @@ import DutyIcon from '../../assets/icon/DutyIcon';
 const Navigation = () => {
   return (
     <View style={style.navContainer}>
-      <TouchableOpacity>
+      <TouchableOpacity style={style.navIconStyle}>
         <HomeScreenIcon />
       </TouchableOpacity>
 
-      <TouchableOpacity>
+      <TouchableOpacity style={style.navIconStyle}>
         <SearchIcon />
       </TouchableOpacity>
 
-      <TouchableOpacity>
+      <TouchableOpacity style={style.navIconStyle}>
         <AddPostIcon />
       </TouchableOpacity>
 
-      <TouchableOpacity>
+      <TouchableOpacity style={style.navIconStyle}>
         <DutyIcon />
       </TouchableOpacity>
 
-      <TouchableOpacity>
+      <TouchableOpacity style={style.navIconStyle}>
         <ProfileIcon />
       </TouchableOpacity>
     </View>

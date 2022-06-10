@@ -3,14 +3,18 @@ import {COLORS} from '../../common/const/colors.const';
 
 export const style = StyleSheet.create({
   navContainer: {
+    position: 'absolute',
     paddingHorizontal: 14,
     flexDirection: 'row',
     width: '100%',
     justifyContent: 'space-between',
     backgroundColor: COLORS.WHITE,
-    paddingVertical: 12,
+    paddingTop: 8,
     bottom: 0,
-    marginTop: 12,
-    flex: 1,
+  },
+  navIconStyle: {
+    alignSelf: 'flex-end',
+    width: 24,
+    height: 24,
   },
 });
