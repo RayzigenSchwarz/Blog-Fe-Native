@@ -12,7 +12,7 @@ import {style} from './style';
 const AllPost = () => {
   const dispatch = useDispatch();
   const posts = useSelector(getPosts) as postType[];
-  // const loading = useSelector(getLoader);
+  // const loading = useSelector(getLoader); TODO сделать лоадер
 
   useEffect(() => {
     dispatch(fetchGetUserinfoRequest());
@@ -23,7 +23,6 @@ const AllPost = () => {
   }, [dispatch]);
   return (
     <>
-      {/*{loading && (*/}
       <FlatList
         data={posts}
         contentContainerStyle={style.allPostContainer}
@@ -47,7 +46,6 @@ const AllPost = () => {
         }}
         keyExtractor={(post: postType) => post._id}
       />
-      {/*)}*/}
     </>
   );
 };

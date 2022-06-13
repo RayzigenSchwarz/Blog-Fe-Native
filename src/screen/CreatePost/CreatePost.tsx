@@ -12,6 +12,7 @@ import {useDispatch} from 'react-redux';
 import {setStorage} from '../../common/services/storage.service';
 import Input from '../../components/TextInput/TextInput';
 import CustomButton from '../../components/Button/Button';
+import {fetchPostsRequest} from '../../store/post/action';
 
 const CreatePost = () => {
   const dispatch = useDispatch();
@@ -22,8 +23,7 @@ const CreatePost = () => {
   );
 
   const onSubmit = (values: PostsTypes) => {
-    // dispatch(fetchPostsRequest(values));
-    console.log(values);
+    dispatch(fetchPostsRequest(values));
   };
 
   return (

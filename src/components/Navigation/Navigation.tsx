@@ -12,23 +12,23 @@ const Navigation = () => {
   return (
     <View style={style.navContainer}>
       <TouchableOpacity style={style.navIconStyle}>
-        <HomeScreenIcon />
+        <HomeScreenIcon width={24} height={24} />
       </TouchableOpacity>
 
       <TouchableOpacity style={style.navIconStyle}>
-        <SearchIcon />
+        <SearchIcon width={24} height={24} />
       </TouchableOpacity>
 
       <TouchableOpacity style={style.navIconStyle}>
-        <AddPostIcon />
+        <AddPostIcon width={24} height={24} />
       </TouchableOpacity>
 
       <TouchableOpacity style={style.navIconStyle}>
-        <DutyIcon />
+        <DutyIcon width={24} height={24} />
       </TouchableOpacity>
 
       <TouchableOpacity style={style.navIconStyle}>
-        <ProfileIcon />
+        <ProfileIcon width={24} height={24} />
       </TouchableOpacity>
     </View>
   );
