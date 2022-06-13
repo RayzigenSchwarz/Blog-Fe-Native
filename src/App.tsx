@@ -11,8 +11,8 @@ const App = () => {
   return (
     <Provider store={store}>
       <SafeAreaView>
-        <Layout children={<AllPost />} />
-        {/*<Layout children={<CreatePost />} />*/}
+        {/*<Layout children={<AllPost />} />*/}
+        <Layout children={<CreatePost />} />
       </SafeAreaView>
     </Provider>
   );

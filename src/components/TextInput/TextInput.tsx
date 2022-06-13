@@ -1,47 +1,45 @@
-export {};
+import React from 'react';
+import {
+  NativeSyntheticEvent,
+  TextInput,
+  TextInputFocusEventData,
+} from 'react-native';
 
-// import React from 'react';
-// import {
-//   NativeSyntheticEvent,
-//   TextInput,
-//   TextInputChangeEventData,
-// } from 'react-native';
-// import {inputStyle} from './style';
-//
-// export interface ITextInputProps {
-//   placeholder: string;
-//   placeholderTextColor: string;
-//   onChangeText?: any /*(e: NativeSyntheticEvent<TextInputChangeEventData>) => void;*/;
-//   value?: string | number | undefined;
-//   style?: object;
-//   placeholderColor?: string;
-//   name?: string;
-//   multiline?: boolean;
-//   numberOfLines?: number;
-// }
-//
-// const Input: React.FC<ITextInputProps> = ({
-//   placeholderTextColor,
-//   placeholder,
-//   onChangeText,
-//   value,
-//   style = inputStyle.defaultTextInputStyle,
-//   multiline = false,
-//   numberOfLines,
-//   name,
-// }) => {
-//   return (
-//     <TextInput
-//       placeholderTextColor={placeholderTextColor}
-//       placeholder={placeholder}
-//       style={style}
-//       onChangeText={onChangeText}
-//       value={value}
-//       name={name}
-//       multiline={multiline}
-//       numberOfLines={numberOfLines}
-//     />
-//   );
-// };
-//
-// export default Input;
+export interface ITextInputProps {
+  placeholder: string;
+  placeholderTextColor: string;
+  onChangeText: (text: string) => void;
+  value?: string;
+  style?: object;
+  placeholderColor?: string;
+  name?: string | number;
+  multiline?: boolean;
+  numberOfLines?: number;
+  onBlur?: (e: NativeSyntheticEvent<TextInputFocusEventData>) => void;
+}
+
+const Input: React.FC<ITextInputProps> = ({
+  placeholderTextColor,
+  placeholder,
+  onChangeText,
+  value,
+  style,
+  multiline = false,
+  numberOfLines,
+  onBlur,
+}) => {
+  return (
+    <TextInput
+      placeholderTextColor={placeholderTextColor}
+      placeholder={placeholder}
+      style={style}
+      onChangeText={onChangeText}
+      onBlur={onBlur}
+      value={value}
+      multiline={multiline}
+      numberOfLines={numberOfLines}
+    />
+  );
+};
+
+export default Input;

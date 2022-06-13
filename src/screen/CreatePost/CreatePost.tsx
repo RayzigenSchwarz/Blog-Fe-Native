@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, TextInput, TouchableOpacity, View} from 'react-native';
+import {Text, View} from 'react-native';
 import {Formik} from 'formik';
 import {
   initialValuesPost,
@@ -8,9 +8,10 @@ import {
 import {PostsTypes} from '../../common/types/post.types';
 import {style} from './style';
 import {COLORS} from '../../common/const/colors.const';
-import {fetchPostsRequest} from '../../store/post/action';
 import {useDispatch} from 'react-redux';
 import {setStorage} from '../../common/services/storage.service';
+import Input from '../../components/TextInput/TextInput';
+import CustomButton from '../../components/Button/Button';
 
 const CreatePost = () => {
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ const CreatePost = () => {
   );
 
   const onSubmit = (values: PostsTypes) => {
-    dispatch(fetchPostsRequest(values));
+    // dispatch(fetchPostsRequest(values));
     console.log(values);
   };
 
@@ -58,7 +59,7 @@ const CreatePost = () => {
               <Text style={style.postTitle}>Создание поста</Text>
 
               <View style={style.inputContainer}>
-                <TextInput
+                <Input
                   placeholderTextColor={COLORS.LIGHT_GRAY}
                   placeholder={'Заголовок статьи'}
                   style={[
@@ -74,16 +75,16 @@ const CreatePost = () => {
                   <Text style={style.alertErrorShow}>{titleError}</Text>
                 )}
 
-                <TextInput
+                <Input
                   placeholder={'Ссылка на фото'}
                   placeholderTextColor={COLORS.LIGHT_GRAY}
-                  style={style.inputStyle}
                   onChangeText={handleChange('image')}
+                  style={style.inputStyle}
                   onBlur={handleBlur('image')}
                   value={valuesImage}
                 />
 
-                <TextInput
+                <Input
                   placeholder={'Описание статьи'}
                   style={[
                     style.inputStyle,
@@ -102,12 +103,12 @@ const CreatePost = () => {
                   <Text style={style.alertErrorShow}>{descriptionError}</Text>
                 )}
 
-                <TouchableOpacity
+                <CustomButton
                   style={style.buttonStyle}
-                  // underlayColor={COLORS.RED}
-                  onPress={handleSubmit}>
-                  <Text style={style.buttonText}>Опубликовать</Text>
-                </TouchableOpacity>
+                  onPress={handleSubmit}
+                  buttonText={'Опубликовать'}
+                  buttonTextStyle={style.buttonText}
+                />
               </View>
             </View>
           );
