@@ -5,15 +5,16 @@ import LikeIcon from '../../assets/icon/LikeIcon';
 import FillLikeIcon from '../../assets/icon/FillLikeIcon';
 import {IPostProps} from '../../common/types/post.types';
 import {style} from './style';
+import {dateFormat} from '../../common/helper/dateHelper';
 
 const Post = ({
-  postAuthor,
-  userAvatar,
-  date,
   postImg,
   title,
   description,
   like,
+  postAuthor,
+  userAvatar,
+  createdAt,
 }: IPostProps) => {
   const [likePress, setLikePress] = useState(false);
 
@@ -35,11 +36,16 @@ const Post = ({
   return (
     <View style={style.postContainer}>
       <View style={style.postAuthorContainer}>
-        <Image source={{uri: userAvatar}} style={style.postAuthorUserAvatar} />
+        <Image
+          source={{
+            uri: userAvatar,
+          }}
+          style={style.postAuthorUserAvatar}
+        />
         <Text style={style.postAuthorUserName}>{postAuthor}</Text>
       </View>
 
-      <Text style={style.postDate}>{date}</Text>
+      <Text style={style.postDate}>{dateFormat(createdAt)}</Text>
 
       <Image
         style={style.postPhoto}

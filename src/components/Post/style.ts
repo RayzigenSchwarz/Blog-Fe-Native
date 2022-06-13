@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+// local
 import {COLORS} from '../../common/const/colors.const';
 
 export const style = StyleSheet.create({
@@ -64,10 +65,6 @@ export const style = StyleSheet.create({
     color: COLORS.BLACK,
     fontWeight: '300',
   },
-  allPostContainer: {
-    marginVertical: 12,
-  },
-  postAlignItem: {alignItems: 'center'},
   postHideShowDescription: {
     width: '100%',
     fontSize: 18,
