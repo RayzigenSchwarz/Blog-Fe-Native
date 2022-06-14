@@ -75,7 +75,11 @@ const Post = ({
 
       <View style={style.likeContainer}>
         <TouchableOpacity onPress={likePressHandler} style={style.like}>
-          {!likePress ? <LikeIcon /> : <FillLikeIcon />}
+          {!likePress ? (
+            <LikeIcon width={24} height={24} />
+          ) : (
+            <FillLikeIcon width={24} height={24} />
+          )}
         </TouchableOpacity>
 
         <Text style={style.likeCount}>{like}</Text>

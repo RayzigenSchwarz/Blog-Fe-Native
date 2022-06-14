@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+// local
 import {COLORS} from '../../common/const/colors.const';
 
 export const style = StyleSheet.create({
@@ -9,7 +10,8 @@ export const style = StyleSheet.create({
     width: '100%',
     justifyContent: 'space-between',
     backgroundColor: COLORS.WHITE,
-    paddingTop: 8,
+    paddingTop: 12,
+    paddingBottom: 24,
     bottom: 0,
   },
   navIconStyle: {

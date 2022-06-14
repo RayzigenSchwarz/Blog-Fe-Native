@@ -39,6 +39,15 @@ export const style = StyleSheet.create({
     justifyContent: 'center',
     width: '100%',
   },
+  postTitleContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '86%',
+  },
+  backLink: {
+    color: COLORS.BLUE,
+    fontSize: 16,
+  },
   buttonStyle: {
     marginTop: 12,
     paddingTop: 12,

@@ -26,7 +26,6 @@ import {
 function* fetchPostsSaga({payload}: ReturnType<typeof fetchPostsRequest>): any {
   try {
     yield call(request.post, 'posts', payload);
-    console.log(payload, 'payload');
     yield put(fetchPostsSuccess());
   } catch (e: any) {
     yield put(
