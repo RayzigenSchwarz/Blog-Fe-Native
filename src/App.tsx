@@ -1,19 +1,16 @@
 import React from 'react';
-import {SafeAreaView} from 'react-native';
-// local
-import Layout from './components/Layout/Layout';
 import {Provider} from 'react-redux';
+import {NavigationContainer} from '@react-navigation/native';
+// local
 import store from './store';
-import CreatePost from './screen/CreatePost/CreatePost';
-import AllPost from './screen/AllPosts/AllPost';
+import {RootStack} from './Navigation/RootStack';
 
 const App = () => {
   return (
     <Provider store={store}>
-      <SafeAreaView>
-        {/*<Layout children={<AllPost />} />*/}
-        <Layout children={<CreatePost />} />
-      </SafeAreaView>
+      <NavigationContainer>
+        <RootStack />
+      </NavigationContainer>
     </Provider>
   );
 };

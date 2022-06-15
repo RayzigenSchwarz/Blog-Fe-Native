@@ -1,6 +1,8 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import {Formik} from 'formik';
+import {useNavigation} from '@react-navigation/native';
+// local
 import {
   initialValuesPost,
   validationsShima,
@@ -15,6 +17,8 @@ import CustomButton from '../../components/Button/Button';
 import {fetchPostsRequest} from '../../store/post/action';
 
 const CreatePost = () => {
+  const navigation = useNavigation();
+
   const dispatch = useDispatch();
 
   setStorage(
@@ -56,7 +60,13 @@ const CreatePost = () => {
           const descriptionError = touchedDescription && errorsDescription;
           return (
             <View style={style.formContainer}>
-              <Text style={style.postTitle}>Создание поста</Text>
+              <View style={style.postTitleContainer}>
+                <Text style={style.postTitle}>Создание поста</Text>
+
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                  <Text style={style.backLink}>Назад</Text>
+                </TouchableOpacity>
+              </View>
 
               <View style={style.inputContainer}>
                 <Input
