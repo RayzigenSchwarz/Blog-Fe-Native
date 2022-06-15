@@ -14,28 +14,35 @@ import {
   PROFILE,
   SEARCH,
 } from '../../common/const/navigation.const';
-import {homeScreenProp} from '../../common/types/navigation.types';
+import {
+  homeScreenProp,
+  RootStackParamList,
+} from '../../common/types/navigation.types';
 
 const Navigation = () => {
   const navigation = useNavigation<homeScreenProp>();
+
+  const navigationFunc = (to: keyof RootStackParamList): void => {
+    return navigation.navigate(to);
+  };
 
   return (
     <View style={style.navContainer}>
       <TouchableOpacity
         style={style.navIconStyle}
-        onPress={() => navigation.navigate(HOME_SCREEN)}>
+        onPress={() => navigationFunc(HOME_SCREEN)}>
         <HomeScreenIcon width={24} height={24} />
       </TouchableOpacity>
 
       <TouchableOpacity
         style={style.navIconStyle}
-        onPress={() => navigation.navigate(SEARCH)}>
+        onPress={() => navigationFunc(SEARCH)}>
         <SearchIcon width={24} height={24} />
       </TouchableOpacity>
 
       <TouchableOpacity
         style={style.navIconStyle}
-        onPress={() => navigation.navigate(CREATE_POST)}>
+        onPress={() => navigationFunc(CREATE_POST)}>
         <AddPostIcon width={24} height={24} />
       </TouchableOpacity>
 
@@ -45,7 +52,7 @@ const Navigation = () => {
 
       <TouchableOpacity
         style={style.navIconStyle}
-        onPress={() => navigation.navigate(PROFILE)}>
+        onPress={() => navigationFunc(PROFILE)}>
         <ProfileIcon width={24} height={24} />
       </TouchableOpacity>
     </View>
