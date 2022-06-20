@@ -1,13 +1,13 @@
 import {combineReducers} from 'redux';
 import postReducer from './post/reducer';
-import profileReducer from './profile/reducer';
+// import profileReducer from './profile/reducer';
+import authReducer from './auth/reducer';
 
 const rootReducer = combineReducers({
-  // todo: todoReducer,
-  // auth: authReducer,
+  auth: authReducer,
   post: postReducer,
   // colleague: colleaguesReducer,
-  profile: profileReducer,
+  // profile: profileReducer,
 });
 
 export type AppState = ReturnType<typeof rootReducer>;

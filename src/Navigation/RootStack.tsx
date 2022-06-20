@@ -4,7 +4,14 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Layout from '../components/Layout/Layout';
 import AllPost from '../screen/AllPosts/AllPost';
 import CreatePost from '../screen/CreatePost/CreatePost';
-import {CREATE_POST, HOME_SCREEN} from '../common/const/navigation.const';
+import {
+  CREATE_POST,
+  HOME_SCREEN,
+  LOGIN,
+  REGISTER,
+} from '../common/const/navigation.const';
+import Auth from '../screen/Auth/Auth';
+import {ELoginType} from '../common/types/auth.types';
 
 const Stack = createStackNavigator();
 
@@ -17,6 +24,12 @@ export const RootStack = () => {
         </Stack.Screen>
         <Stack.Screen name={CREATE_POST}>
           {() => <Layout children={<CreatePost />} />}
+        </Stack.Screen>
+        <Stack.Screen name={LOGIN}>
+          {() => <Layout children={<Auth type={ELoginType.LOGIN} />} />}
+        </Stack.Screen>
+        <Stack.Screen name={REGISTER}>
+          {() => <Layout children={<Auth type={ELoginType.REGISTER} />} />}
         </Stack.Screen>
       </>
     );

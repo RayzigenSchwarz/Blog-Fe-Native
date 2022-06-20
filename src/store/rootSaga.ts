@@ -1,11 +1,12 @@
 import {all, fork} from 'redux-saga/effects';
 import postSaga from './post/sagas';
 import profileSaga from './profile/sagas';
+import authSaga from './auth/sagas';
 
 export function* rootSaga() {
   yield all([
-    fork(postSaga),
-    // fork(authSaga),
+    // fork(postSaga),
+    fork(authSaga),
     fork(profileSaga),
     // fork(colleaguesSaga),
   ]);

@@ -1,12 +1,11 @@
 import React, {useEffect} from 'react';
-import Post from '../../components/Post/Post';
 import {FlatList, View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 // local
+import Post from '../../components/Post/Post';
 import {fetchGetPostsRequest} from '../../store/post/action';
 import {getPosts} from '../../store/post/selectors';
 import {postType} from '../../store/post/types';
-import {fetchGetUserinfoRequest} from '../../store/profile/actions';
 import {style} from './style';
 
 const AllPost = () => {
@@ -14,9 +13,9 @@ const AllPost = () => {
   const posts = useSelector(getPosts) as postType[];
   // const loading = useSelector(getLoader); TODO сделать лоадер
 
-  useEffect(() => {
-    dispatch(fetchGetUserinfoRequest());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchGetUserinfoRequest());
+  // }, [dispatch]);
 
   useEffect(() => {
     dispatch(fetchGetPostsRequest());

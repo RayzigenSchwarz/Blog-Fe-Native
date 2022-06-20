@@ -11,7 +11,8 @@ import DutyIcon from '../../assets/icon/DutyIcon';
 import {
   CREATE_POST,
   HOME_SCREEN,
-  PROFILE,
+  LOGIN,
+  REGISTER,
   SEARCH,
 } from '../../common/const/navigation.const';
 import {
@@ -52,7 +53,7 @@ const Navigation = () => {
 
       <TouchableOpacity
         style={style.navIconStyle}
-        onPress={() => navigationFunc(PROFILE)}>
+        onPress={() => navigationFunc(LOGIN)}>
         <ProfileIcon width={24} height={24} />
       </TouchableOpacity>
     </View>

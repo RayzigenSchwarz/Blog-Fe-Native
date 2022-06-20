@@ -7,12 +7,12 @@ export const getPost = (state: AppState) => state.post;
 
 export const getComment = (state: AppState) => state.post;
 
-export const getUsersInfo = (state: AppState) => state.profile;
+// export const getUsersInfo = (state: AppState) => state.profile;
 
-export const getUserInfo = createSelector(
-  getUsersInfo,
-  (state: IInitStateType) => state.userInfo,
-);
+// export const getUserInfo = createSelector(
+//   getUsersInfo,
+//   (state: IInitStateType) => state.userInfo,
+// );
 
 export const getLoader = createSelector(
   getPost,

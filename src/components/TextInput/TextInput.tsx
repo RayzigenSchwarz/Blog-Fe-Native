@@ -16,6 +16,7 @@ export interface ITextInputProps {
   multiline?: boolean;
   numberOfLines?: number;
   onBlur?: (e: NativeSyntheticEvent<TextInputFocusEventData>) => void;
+  secureTextEntry?: boolean;
 }
 
 const Input: React.FC<ITextInputProps> = ({
@@ -27,9 +28,11 @@ const Input: React.FC<ITextInputProps> = ({
   multiline = false,
   numberOfLines,
   onBlur,
+  secureTextEntry = false,
 }) => {
   return (
     <TextInput
+      secureTextEntry={secureTextEntry}
       placeholderTextColor={placeholderTextColor}
       placeholder={placeholder}
       style={style}

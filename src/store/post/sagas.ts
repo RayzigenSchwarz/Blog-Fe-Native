@@ -39,6 +39,7 @@ function* fetchPostsSaga({payload}: ReturnType<typeof fetchPostsRequest>): any {
 function* fetchGetPostsSaga({id = ''}: any): any {
   try {
     const response = yield call(request.get, `posts/${id}`);
+    console.log(response);
     yield put(fetchGetPostsSuccess(response.data));
   } catch (e: any) {
     yield put(

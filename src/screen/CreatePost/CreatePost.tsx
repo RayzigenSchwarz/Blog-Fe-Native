@@ -11,7 +11,6 @@ import {PostsTypes} from '../../common/types/post.types';
 import {style} from './style';
 import {COLORS} from '../../common/const/colors.const';
 import {useDispatch} from 'react-redux';
-import {setStorage} from '../../common/services/storage.service';
 import Input from '../../components/TextInput/TextInput';
 import CustomButton from '../../components/Button/Button';
 import {fetchPostsRequest} from '../../store/post/action';
@@ -20,11 +19,6 @@ const CreatePost = () => {
   const navigation = useNavigation();
 
   const dispatch = useDispatch();
-
-  setStorage(
-    'token',
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOGM2YjljZmYwOGJmMDAwNGFmOWZmNCIsInVzZXIiOiJzbWFsbGRpY2sxMjMiLCJpYXQiOjE2NTMzNjk3NTZ9.6mAu9BZTY5aY1g8OMSRxO47kEj5eVLUndTwzZ0UVDGQ',
-  );
 
   const onSubmit = (values: PostsTypes) => {
     dispatch(fetchPostsRequest(values));
